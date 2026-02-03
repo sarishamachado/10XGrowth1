@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { ArrowRight, Check, X as XIcon, TrendingUp, Users, Target, Rocket, Layers, BarChart3, Database, Shield, Zap, Globe, MessageSquare } from "lucide-react";
+import { ArrowRight, Check, X as XIcon, TrendingUp, Users, Target, Rocket, Layers, BarChart3, Database, Shield, Zap, Globe, MessageSquare, UserPlus, Smartphone, Megaphone, Cloud, Coins, Layout } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -28,11 +28,12 @@ export default function Home() {
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent origin-left z-[100]"
         style={{ scaleX }}
       />
-      
+
       <Navigation />
 
       <main>
         <HeroSection />
+        <TrustedBySection />
         <TrustRibbon />
         <ProblemSolutionSection />
         <ServicesCarousel />
@@ -70,7 +71,7 @@ function HeroSection() {
           <div className="inline-block px-4 py-2 rounded-full border border-primary/20 bg-primary/10 text-primary text-sm font-bold tracking-widest uppercase">
             The Future of B2B Growth
           </div>
-          
+
           <h1 className="text-6xl md:text-8xl font-display font-bold leading-[0.9] tracking-tighter">
             <span className="block text-white">10X</span>
             <span className="block text-white/50">YOUR</span>
@@ -100,7 +101,7 @@ function HeroSection() {
           {/* Abstract 3D Representation */}
           <div className="absolute inset-0 flex items-center justify-center">
             {/* Main Cube */}
-            <motion.div 
+            <motion.div
               animate={{ rotateY: 360, rotateX: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               className="w-64 h-64 border border-primary/50 bg-primary/5 backdrop-blur-sm rounded-3xl relative transform-style-3d shadow-[0_0_100px_rgba(255,107,53,0.3)]"
@@ -110,7 +111,7 @@ function HeroSection() {
                 <div className="w-32 h-32 bg-accent/20 rounded-full blur-xl" />
               </div>
             </motion.div>
-            
+
             {/* Orbiting Elements */}
             {[...Array(3)].map((_, i) => (
               <motion.div
@@ -141,9 +142,46 @@ function HeroSection() {
   );
 }
 
+function TrustedBySection() {
+  const logos = [
+    { name: "SaSarjan", path: "/logos/logo_sasarjan.png" },
+    { name: "Fincare", path: "/logos/logo_fincare.png" },
+    { name: "Travelpack", path: "/logos/logo_travelpack.png" },
+    { name: "Tekno Point", path: "/logos/logo_teknopoint.png" },
+    { name: "Global Ecovillage", path: "/logos/logo_global_ecovillage.png" },
+    { name: "PathCheck", path: "/logos/logo_pathcheck.png" },
+    { name: "Dun & Bradstreet", path: "/logos/logo_dunbradstreet.png" },
+    { name: "Web Geo Services", path: "/logos/logo_webgeoservices.png" },
+  ];
+
+  return (
+    <section className="py-20 bg-background overflow-hidden border-b border-white/5">
+      <div className="container mx-auto px-4">
+        <p className="text-center text-muted-foreground font-medium uppercase tracking-[0.2em] text-xs mb-12">
+          Trusted By Industry Leaders
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-12 opacity-50 hover:opacity-100 transition-opacity duration-500">
+          {logos.map((logo, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+            >
+              <img src={logo.path} alt={logo.name} className="h-8 md:h-12 w-auto max-w-[140px] object-contain" />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function TrustRibbon() {
   const services = ["Growth Strategy", "Digital Transformation", "Zoho Implementation", "CXO on Demand", "Performance Marketing", "Process Automation", "Team Augmentation"];
-  
+
   return (
     <div className="w-full py-8 bg-white/5 border-y border-white/5 overflow-hidden">
       <div className="flex w-max animate-scroll">
@@ -173,10 +211,10 @@ function ProblemSolutionSection() {
   return (
     <section className="py-32 relative">
       <div className="container mx-auto px-4">
-        <SectionHeading 
-          eyebrow="The Reality" 
-          title="The Growth Paradox" 
-          subtitle="Why most companies hit a ceiling despite working harder than ever." 
+        <SectionHeading
+          eyebrow="The Reality"
+          title="The Growth Paradox"
+          subtitle="Why most companies hit a ceiling despite working harder than ever."
         />
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-16 mt-16">
@@ -242,49 +280,70 @@ function ProblemSolutionSection() {
 function ServicesCarousel() {
   const services = [
     {
-      title: "Growth Strategy",
-      description: "Comprehensive roadmaps that align your business goals with actionable execution plans.",
+      title: "Growth Consulting",
+      description: "We begin our engagement with understanding your vision, your current team and resources, the gaps in execution, and then, we jointly create a roadmap for 10xGrowth.",
       icon: TrendingUp,
       color: "#ff6b35",
-      tags: ["Planning", "Market Analysis", "Scaling"]
+      tags: ["Strategy", "Execution", "Roadmap"]
+    },
+    {
+      title: "Recruitment",
+      description: "Discover top talent effortlessly with our recruitment services. Our team of expert recruiters ensures you find the perfect fit for your company, turning your hiring needs into a reality.",
+      icon: UserPlus,
+      color: "#8b5cf6",
+      tags: ["HR", "Talent", "Scale"]
     },
     {
       title: "Zoho Implementation",
-      description: "End-to-end implementation of the Zoho suite to streamline operations and data.",
+      description: "Maximize your business efficiency with our Zoho integration services. We seamlessly connect Zoho with third-party apps, customizing workflows to suit your needs.",
       icon: Database,
-      color: "#8b5cf6",
-      tags: ["CRM", "Automation", "Finance"]
+      color: "#3b82f6",
+      tags: ["CRM", "Automation", "Efficiency"]
     },
     {
-      title: "CXO on Demand",
-      description: "Access world-class executive leadership without the full-time overhead.",
-      icon: Users,
-      color: "#3b82f6",
-      tags: ["Leadership", "Management", "Strategy"]
+      title: "Fund Raising",
+      description: "We'll help you connect with investors and craft an attractive pitch deck to achieve your fundraising goals. With our strong investor network, your project will stand out.",
+      icon: Coins,
+      color: "#10b981",
+      tags: ["Investors", "Pitch Deck", "Funding"]
+    },
+    {
+      title: "Website Development",
+      description: "Achieve your online goals effortlessly with our web development services. We'll build your website, integrate hosting, and streamline customer management with CRM integration.",
+      icon: Globe,
+      color: "#f59e0b",
+      tags: ["Web", "Hosting", "CRM"]
+    },
+    {
+      title: "App Development",
+      description: "We ensure your app is user-friendly and reliable. With our expertise, we provide a seamless experience for both you and your users throughout the app development process.",
+      icon: Smartphone,
+      color: "#ec4899",
+      tags: ["Mobile", "UX/UI", "Reliability"]
     },
     {
       title: "Digital Marketing",
-      description: "Performance-driven marketing campaigns that convert traffic into loyal customers.",
-      icon: Target,
-      color: "#10b981",
-      tags: ["PPC", "SEO", "Content"]
+      description: "Boost your online presence with our digital marketing services. We specialize in building brands, crafting tailored strategies to engage your audience and drive conversions.",
+      icon: Megaphone,
+      color: "#6366f1",
+      tags: ["Branding", "Strategies", "Conversions"]
     },
     {
-      title: "Process Automation",
-      description: "Remove manual bottlenecks with intelligent workflows and system integrations.",
-      icon: Zap,
-      color: "#f59e0b",
-      tags: ["Efficiency", "Integration", "AI"]
+      title: "Cloud Infrastructure",
+      description: "We take care of everything from managing your IT needs to keeping your data safe and sound, so you can stay focused on growing your business.",
+      icon: Cloud,
+      color: "#14b8a6",
+      tags: ["IT", "Security", "Management"]
     }
   ];
 
   return (
     <section id="services" className="py-32 bg-secondary/20 relative overflow-hidden">
       <div className="container mx-auto px-4 mb-16">
-        <SectionHeading 
-          eyebrow="What We Offer" 
-          title="Complete Growth Solutions" 
-          subtitle="Everything you need to scale, under one roof." 
+        <SectionHeading
+          eyebrow="What We Offer"
+          title="Complete Growth Solutions"
+          subtitle="Everything you need to scale, under one roof."
         />
       </div>
 
@@ -323,7 +382,7 @@ function ProcessTimeline() {
         <div className="relative mt-20">
           {/* Connecting Line */}
           <div className="absolute top-1/2 left-0 w-full h-1 bg-white/10 -translate-y-1/2 hidden md:block" />
-          <motion.div 
+          <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
@@ -359,21 +418,21 @@ function GrowthVisualization() {
   return (
     <section className="py-32 bg-[#0a0f1c] relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 pointer-events-none">
-         <svg width="100%" height="100%">
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5"/>
-            </pattern>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-         </svg>
+        <svg width="100%" height="100%">
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5" />
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
       </div>
 
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-16 relative z-10">
         <div className="lg:w-1/2">
-          <SectionHeading 
+          <SectionHeading
             align="left"
-            eyebrow="Data Driven" 
-            title="Visualize Your Potential" 
-            subtitle="See what happens when strategy meets precision execution. We don't guess—we calculate, project, and deliver." 
+            eyebrow="Data Driven"
+            title="Visualize Your Potential"
+            subtitle="See what happens when strategy meets precision execution. We don't guess—we calculate, project, and deliver."
           />
           <div className="space-y-6 mt-8">
             {[
@@ -381,7 +440,7 @@ function GrowthVisualization() {
               { label: "Operational Efficiency", value: "+85%", color: "bg-accent" },
               { label: "Client Retention", value: "98%", color: "bg-green-500" }
             ].map((stat, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -394,12 +453,12 @@ function GrowthVisualization() {
                   <span className="text-white font-bold">{stat.value}</span>
                 </div>
                 <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
-                  <motion.div 
+                  <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: "100%" }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.5, delay: 0.5 + (i * 0.2) }}
-                    className={`h-full ${stat.color}`} 
+                    className={`h-full ${stat.color}`}
                   />
                 </div>
               </motion.div>
@@ -408,52 +467,52 @@ function GrowthVisualization() {
         </div>
 
         <div className="lg:w-1/2">
-           {/* Abstract Tree/Chart Visual */}
-           <motion.div 
-             initial={{ opacity: 0, scale: 0.9 }}
-             whileInView={{ opacity: 1, scale: 1 }}
-             viewport={{ once: true }}
-             className="relative aspect-square max-w-[500px] mx-auto"
-           >
-             {/* Central Glow */}
-             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-full blur-[80px]" />
-             
-             {/* Animated Chart SVG */}
-             <svg viewBox="0 0 200 200" className="w-full h-full drop-shadow-2xl">
-                <motion.path
-                  d="M 20 180 Q 60 180 80 140 T 140 80 T 180 20"
-                  fill="none"
-                  stroke="url(#gradientLine)"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  transition={{ duration: 2, ease: "easeInOut" }}
+          {/* Abstract Tree/Chart Visual */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative aspect-square max-w-[500px] mx-auto"
+          >
+            {/* Central Glow */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-full blur-[80px]" />
+
+            {/* Animated Chart SVG */}
+            <svg viewBox="0 0 200 200" className="w-full h-full drop-shadow-2xl">
+              <motion.path
+                d="M 20 180 Q 60 180 80 140 T 140 80 T 180 20"
+                fill="none"
+                stroke="url(#gradientLine)"
+                strokeWidth="4"
+                strokeLinecap="round"
+                initial={{ pathLength: 0 }}
+                whileInView={{ pathLength: 1 }}
+                transition={{ duration: 2, ease: "easeInOut" }}
+              />
+              <defs>
+                <linearGradient id="gradientLine" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#ff6b35" />
+                  <stop offset="100%" stopColor="#3b82f6" />
+                </linearGradient>
+              </defs>
+
+              {/* Floating data points */}
+              {[
+                { cx: 20, cy: 180 }, { cx: 80, cy: 140 }, { cx: 140, cy: 80 }, { cx: 180, cy: 20 }
+              ].map((point, i) => (
+                <motion.circle
+                  key={i}
+                  cx={point.cx}
+                  cy={point.cy}
+                  r="4"
+                  fill="white"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ delay: 2 + (i * 0.3) }}
                 />
-                <defs>
-                  <linearGradient id="gradientLine" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#ff6b35" />
-                    <stop offset="100%" stopColor="#3b82f6" />
-                  </linearGradient>
-                </defs>
-                
-                {/* Floating data points */}
-                {[
-                  { cx: 20, cy: 180 }, { cx: 80, cy: 140 }, { cx: 140, cy: 80 }, { cx: 180, cy: 20 }
-                ].map((point, i) => (
-                  <motion.circle
-                    key={i}
-                    cx={point.cx}
-                    cy={point.cy}
-                    r="4"
-                    fill="white"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ delay: 2 + (i * 0.3) }}
-                  />
-                ))}
-             </svg>
-           </motion.div>
+              ))}
+            </svg>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -467,27 +526,27 @@ function DeepDiveZoho() {
         <div className="lg:w-1/2">
           {/* Abstract Tech Visual */}
           <div className="relative aspect-video rounded-2xl bg-black/40 border border-white/10 overflow-hidden shadow-2xl group">
-             {/* Placeholder for "Futuristic Control Room" */}
-             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40 mix-blend-overlay transition-transform duration-700 group-hover:scale-105" />
-             <div className="absolute inset-0 flex items-center justify-center">
-                <Database size={64} className="text-purple-400 opacity-80" />
-             </div>
-             {/* Floating UI Elements */}
-             <motion.div 
-               animate={{ y: [0, -10, 0] }}
-               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-               className="absolute top-10 right-10 p-4 bg-white/10 backdrop-blur-md rounded-lg border border-white/20"
-             >
-               <div className="w-20 h-2 bg-purple-400 rounded-full mb-2" />
-               <div className="w-12 h-2 bg-white/20 rounded-full" />
-             </motion.div>
+            {/* Placeholder for "Futuristic Control Room" */}
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40 mix-blend-overlay transition-transform duration-700 group-hover:scale-105" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Database size={64} className="text-purple-400 opacity-80" />
+            </div>
+            {/* Floating UI Elements */}
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-10 right-10 p-4 bg-white/10 backdrop-blur-md rounded-lg border border-white/20"
+            >
+              <div className="w-20 h-2 bg-purple-400 rounded-full mb-2" />
+              <div className="w-12 h-2 bg-white/20 rounded-full" />
+            </motion.div>
           </div>
         </div>
-        
+
         <div className="lg:w-1/2 text-white">
           <span className="text-purple-400 font-bold tracking-widest text-sm uppercase mb-4 block">Technology Partner</span>
           <h2 className="text-5xl font-display font-bold mb-6">
-            Zoho Experts <br/> At Your Service
+            Zoho Experts <br /> At Your Service
           </h2>
           <p className="text-lg text-purple-100/80 mb-8 leading-relaxed">
             Transform your operations with fully customized Zoho implementations. From CRM to finance, HR to marketing - we integrate, optimize, and train your team for maximum ROI.
@@ -518,7 +577,7 @@ function DeepDiveCXO() {
         <div className="lg:w-1/2 text-white">
           <span className="text-orange-400 font-bold tracking-widest text-sm uppercase mb-4 block">Executive Leadership</span>
           <h2 className="text-5xl font-display font-bold mb-6">
-            C-Level Expertise <br/> Without the Cost
+            C-Level Expertise <br /> Without the Cost
           </h2>
           <p className="text-lg text-orange-100/80 mb-8 leading-relaxed">
             Access strategic executive leadership exactly when you need it. CFO, CMO, CTO, COO - our seasoned C-level experts integrate with your team to drive critical initiatives.
@@ -541,10 +600,10 @@ function DeepDiveCXO() {
         <div className="lg:w-1/2">
           {/* Abstract Leadership Visual */}
           <div className="relative aspect-video rounded-2xl bg-black/40 border border-white/10 overflow-hidden shadow-2xl group">
-             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40 mix-blend-overlay transition-transform duration-700 group-hover:scale-105" />
-             <div className="absolute inset-0 flex items-center justify-center">
-                <Shield size={64} className="text-orange-400 opacity-80" />
-             </div>
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40 mix-blend-overlay transition-transform duration-700 group-hover:scale-105" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Shield size={64} className="text-orange-400 opacity-80" />
+            </div>
           </div>
         </div>
       </div>
@@ -600,7 +659,7 @@ function FinalCTA() {
       <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row gap-16 items-center">
         <div className="lg:w-1/2 text-center lg:text-left">
           <h2 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
-            Ready to <span className="text-primary">10X</span> <br/> Your Business?
+            Ready to <span className="text-primary">10X</span> <br /> Your Business?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-lg mx-auto lg:mx-0">
             Let's talk about your growth goals and create a plan that works. No sales pitch, just real strategy.

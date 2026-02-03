@@ -7,8 +7,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="space-y-6">
-            <div className="text-3xl font-bold font-display tracking-tighter">
-              10x<span className="text-primary">GROWTH</span>
+            <div className="flex items-center gap-2">
+              <img src="/logo.png" alt="10xGrowth" className="h-12 w-auto object-contain" />
             </div>
             <p className="text-muted-foreground italic font-accent">
               Your partner in exponential growth.
@@ -46,11 +46,13 @@ export function Footer() {
             <ul className="space-y-4">
               {[
                 "Growth Consulting",
+                "Recruitment",
                 "Zoho Implementation",
+                "Fund Raising",
+                "Website Development",
+                "App Development",
                 "Digital Marketing",
-                "Outsourcing Solutions",
-                "Creative Studio",
-                "CXO on Demand"
+                "Cloud Infrastructure"
               ].map((item) => (
                 <li key={item}>
                   <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { insertInquirySchema, inquiries } from "./schema";
+import { insertInquirySchema, type Inquiry } from "./schema";
 
 export const api = {
   inquiries: {
@@ -8,7 +8,7 @@ export const api = {
       path: "/api/inquiries",
       input: insertInquirySchema,
       responses: {
-        201: z.custom<typeof inquiries.$inferSelect>(),
+        201: z.custom<Inquiry>(),
         400: z.object({ message: z.string() }),
       },
     },
