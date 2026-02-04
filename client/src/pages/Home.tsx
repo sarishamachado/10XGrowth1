@@ -1,10 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-<<<<<<< HEAD
 import { ArrowRight, Check, X as XIcon, TrendingUp, Users, Target, Rocket, Layers, BarChart3, Database, Shield, Zap, Globe, MessageSquare, UserPlus, Smartphone, Megaphone, Cloud, Coins, Layout, Lightbulb, MessageCircle, Instagram } from "lucide-react";
-=======
-import { ArrowRight, Check, X as XIcon, TrendingUp, Users, Target, Rocket, Layers, BarChart3, Database, Shield, Zap, Globe, MessageSquare, UserPlus, Smartphone, Megaphone, Cloud, Coins, Layout } from "lucide-react";
->>>>>>> 218b7ef18c37da3ada2038d5efdaf14720a7bf24
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -43,10 +39,7 @@ export default function Home() {
         <ServicesCarousel />
         <ProcessTimeline />
         <GrowthVisualization />
-<<<<<<< HEAD
         <EcosystemSection />
-=======
->>>>>>> 218b7ef18c37da3ada2038d5efdaf14720a7bf24
         <DeepDiveZoho />
         <DeepDiveCXO />
         <SocialProof />
@@ -164,7 +157,6 @@ function TrustedBySection() {
 
   return (
     <section className="py-20 bg-background overflow-hidden border-b border-white/5">
-<<<<<<< HEAD
       <div className="container mx-auto px-4 mb-12">
         <p className="text-center text-muted-foreground font-medium uppercase tracking-[0.2em] text-xs">
           Trusted By Industry Leaders
@@ -197,37 +189,12 @@ function TrustedBySection() {
           animation: scroll-logos 40s linear infinite;
         }
       `}</style>
-=======
-      <div className="container mx-auto px-4">
-        <p className="text-center text-muted-foreground font-medium uppercase tracking-[0.2em] text-xs mb-12">
-          Trusted By Industry Leaders
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-12 opacity-50 hover:opacity-100 transition-opacity duration-500">
-          {logos.map((logo, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
-            >
-              <img src={logo.path} alt={logo.name} className="h-8 md:h-12 w-auto max-w-[140px] object-contain" />
-            </motion.div>
-          ))}
-        </div>
-      </div>
->>>>>>> 218b7ef18c37da3ada2038d5efdaf14720a7bf24
     </section>
   );
 }
 
 function TrustRibbon() {
-<<<<<<< HEAD
   const services = ["Growth Operating System", "Continuous Innovation Framework", "Zoho Business OS", "Whatsapp Growth Engine", "Digital Marketing", "Instagram Brand Story", "Growth Studio"];
-=======
-  const services = ["Growth Strategy", "Digital Transformation", "Zoho Implementation", "CXO on Demand", "Performance Marketing", "Process Automation", "Team Augmentation"];
->>>>>>> 218b7ef18c37da3ada2038d5efdaf14720a7bf24
 
   return (
     <div className="w-full py-8 bg-white/5 border-y border-white/5 overflow-hidden">
@@ -327,7 +294,6 @@ function ProblemSolutionSection() {
 function ServicesCarousel() {
   const services = [
     {
-<<<<<<< HEAD
       title: "Growth Operating System",
       description: "A comprehensive operating system designed to automate, scale, and optimize every facet of your business growth trajectory.",
       icon: TrendingUp,
@@ -375,62 +341,6 @@ function ServicesCarousel() {
       icon: Rocket,
       color: "#6366f1",
       tags: ["Expertise", "Execution", "On-Demand"]
-=======
-      title: "Growth Consulting",
-      description: "We begin our engagement with understanding your vision, your current team and resources, the gaps in execution, and then, we jointly create a roadmap for 10xGrowth.",
-      icon: TrendingUp,
-      color: "#ff6b35",
-      tags: ["Strategy", "Execution", "Roadmap"]
-    },
-    {
-      title: "Recruitment",
-      description: "Discover top talent effortlessly with our recruitment services. Our team of expert recruiters ensures you find the perfect fit for your company, turning your hiring needs into a reality.",
-      icon: UserPlus,
-      color: "#8b5cf6",
-      tags: ["HR", "Talent", "Scale"]
-    },
-    {
-      title: "Zoho Implementation",
-      description: "Maximize your business efficiency with our Zoho integration services. We seamlessly connect Zoho with third-party apps, customizing workflows to suit your needs.",
-      icon: Database,
-      color: "#3b82f6",
-      tags: ["CRM", "Automation", "Efficiency"]
-    },
-    {
-      title: "Fund Raising",
-      description: "We'll help you connect with investors and craft an attractive pitch deck to achieve your fundraising goals. With our strong investor network, your project will stand out.",
-      icon: Coins,
-      color: "#10b981",
-      tags: ["Investors", "Pitch Deck", "Funding"]
-    },
-    {
-      title: "Website Development",
-      description: "Achieve your online goals effortlessly with our web development services. We'll build your website, integrate hosting, and streamline customer management with CRM integration.",
-      icon: Globe,
-      color: "#f59e0b",
-      tags: ["Web", "Hosting", "CRM"]
-    },
-    {
-      title: "App Development",
-      description: "We ensure your app is user-friendly and reliable. With our expertise, we provide a seamless experience for both you and your users throughout the app development process.",
-      icon: Smartphone,
-      color: "#ec4899",
-      tags: ["Mobile", "UX/UI", "Reliability"]
-    },
-    {
-      title: "Digital Marketing",
-      description: "Boost your online presence with our digital marketing services. We specialize in building brands, crafting tailored strategies to engage your audience and drive conversions.",
-      icon: Megaphone,
-      color: "#6366f1",
-      tags: ["Branding", "Strategies", "Conversions"]
-    },
-    {
-      title: "Cloud Infrastructure",
-      description: "We take care of everything from managing your IT needs to keeping your data safe and sound, so you can stay focused on growing your business.",
-      icon: Cloud,
-      color: "#14b8a6",
-      tags: ["IT", "Security", "Management"]
->>>>>>> 218b7ef18c37da3ada2038d5efdaf14720a7bf24
     }
   ];
 
@@ -616,7 +526,6 @@ function GrowthVisualization() {
   );
 }
 
-<<<<<<< HEAD
 function EcosystemSection() {
   return (
     <section className="py-32 relative overflow-hidden bg-background">
@@ -664,8 +573,6 @@ function EcosystemSection() {
   );
 }
 
-=======
->>>>>>> 218b7ef18c37da3ada2038d5efdaf14720a7bf24
 function DeepDiveZoho() {
   return (
     <section className="py-32 relative overflow-hidden bg-gradient-to-br from-[#2e1065] to-[#0f172a]">
