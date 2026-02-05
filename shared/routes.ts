@@ -1,5 +1,6 @@
 import { z } from "zod";
-import { insertInquirySchema, type Inquiry } from "./schema";
+import { insertInquirySchema, type Inquiry, type InsertInquiry } from "./schema";
+export { type InsertInquiry };
 
 export const api = {
   inquiries: {

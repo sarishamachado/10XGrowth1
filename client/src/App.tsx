@@ -6,12 +6,18 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Contact from "@/pages/Contact";
+import ZohoMain from "@/pages/ZohoMain";
+import ZohoPartner from "@/pages/ZohoPartner";
+import ZohoPricing from "@/pages/ZohoPricing";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/contact" component={Contact} />
+      <Route path="/zoho" component={ZohoMain} />
+      <Route path="/zoho/partner" component={ZohoPartner} />
+      <Route path="/zoho/pricing" component={ZohoPricing} />
       <Route component={NotFound} />
     </Switch>
   );

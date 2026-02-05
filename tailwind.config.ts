@@ -81,6 +81,23 @@ export default {
           busy: "rgb(239 68 68)",
           offline: "rgb(156 163 175)",
         },
+        // Zoho theme colors
+        purple: {
+          700: '#6c3483',
+          800: '#4a148c',
+          900: '#3d1970'
+        },
+        zohoBlue: '#0078D4',
+        navy: {
+          900: '#1a2332',
+          800: '#2a3342'
+        },
+        coral: {
+          500: '#ff6b35',
+          600: '#f95738'
+        },
+        cream: '#f5f1e8',
+        mint: '#e8f5e9',
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],

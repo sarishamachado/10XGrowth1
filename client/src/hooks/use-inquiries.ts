@@ -4,7 +4,7 @@ import { useToast } from "@/hooks/use-toast";
 
 export function useCreateInquiry() {
   const { toast } = useToast();
-  
+
   return useMutation({
     mutationFn: async (data: InsertInquiry) => {
       const res = await fetch(api.inquiries.create.path, {
@@ -12,12 +12,12 @@ export function useCreateInquiry() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      
+
       if (!res.ok) {
         const error = await res.json();
         throw new Error(error.message || "Failed to submit inquiry");
       }
-      
+
       return res.json();
     },
     onSuccess: () => {

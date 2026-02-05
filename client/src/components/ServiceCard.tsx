@@ -59,13 +59,13 @@ export function ServiceCard({ title, description, icon: Icon, color, tags }: Ser
       className="relative group h-[420px] w-full max-w-sm rounded-3xl bg-white/5 border border-white/10 p-8 flex flex-col justify-between backdrop-blur-md shadow-2xl overflow-hidden cursor-pointer"
     >
       {/* Background Gradient Blob */}
-      <div 
+      <div
         className="absolute -right-20 -top-20 w-60 h-60 rounded-full blur-[100px] opacity-20 transition-all duration-500 group-hover:opacity-40"
         style={{ backgroundColor: color }}
       />
 
       <div style={{ transform: "translateZ(50px)" }} className="relative z-10">
-        <div 
+        <div
           className="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-lg"
           style={{ backgroundColor: `${color}20` }} // 20% opacity of color if possible, or simplified logic
         >
