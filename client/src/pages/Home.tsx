@@ -617,10 +617,10 @@ function SocialProof() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { value: "10+", label: "Years Experience" },
-            { value: "50+", label: "Services Delivered" },
-            { value: "100%", label: "Commitment" },
-            { value: "24/7", label: "Support Available" }
+            { value: "50+", label: "Experts" },
+            { value: "200+", label: "Clients" },
+            { value: "15+", label: "Years of Experience" },
+            { value: "10+", label: "Countries" }
           ].map((stat, i) => (
             <div key={i} className="text-center p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/30 transition-colors">
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2 font-display">{stat.value}</div>

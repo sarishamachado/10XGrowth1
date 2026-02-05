@@ -48,10 +48,10 @@ export default function About() {
                 <section className="py-16 bg-white/5 border-y border-white/5">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                            <StatCard number="15+" label="Years of Experience" delay={0.1} />
-                            <StatCard number="100M+" label="Revenue Yearly" delay={0.2} />
-                            <StatCard number="100+" label="Clients Worldwide" delay={0.3} />
-                            <StatCard number="2.5X" label="Growth Rate" delay={0.4} />
+                            <StatCard number="50+" label="Experts" delay={0.1} />
+                            <StatCard number="200+" label="Clients" delay={0.2} />
+                            <StatCard number="15+" label="Years of Experience" delay={0.3} />
+                            <StatCard number="10+" label="Countries" delay={0.4} />
                         </div>
                     </div>
                 </section>
