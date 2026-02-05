@@ -20,6 +20,9 @@ export function Navigation() {
 
   const navLinks = [
     { label: "Home", href: "/" },
+    { label: "Services", href: "/#services" },
+    { label: "Process", href: "/#process" },
+    { label: "Why Us", href: "/#why-us" },
     { label: "About Us", href: "/about" },
     {
       label: "Zoho",
@@ -27,7 +30,7 @@ export function Navigation() {
       dropdown: [
         { label: "Partner", href: "/zoho/partner" },
         { label: "Pricing", href: "/zoho/pricing" },
-      ]
+      ],
     },
     { label: "Outsource", href: "/outsource" },
     {
@@ -36,7 +39,7 @@ export function Navigation() {
         { label: "Studio", href: "/studio" },
         { label: "Contact Us", href: "/contact" },
         { label: "Video Training Services", href: "/video-training" },
-      ]
+      ],
     },
   ];
 
